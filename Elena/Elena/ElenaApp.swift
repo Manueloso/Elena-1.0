@@ -11,7 +11,7 @@ import SwiftUI
 struct ElenaApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TaskListView(viewModel: TaskViewModel())
         }
     }
 }
