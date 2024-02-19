@@ -10,9 +10,11 @@
 		4D3E03DE2B835C3C004E2FB4 /* ElenaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3E03DD2B835C3C004E2FB4 /* ElenaApp.swift */; };
 		4D3E03E22B835C3C004E2FB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D3E03E12B835C3C004E2FB4 /* Assets.xcassets */; };
 		4D3E03E52B835C3C004E2FB4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D3E03E42B835C3C004E2FB4 /* Preview Assets.xcassets */; };
-		E70E47822B837CAA00D09A6A /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70E47812B837CAA00D09A6A /* TaskListView.swift */; };
 		E70E47842B837CCB00D09A6A /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70E47832B837CCB00D09A6A /* TaskViewModel.swift */; };
-		E70E47862B837CDD00D09A6A /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70E47852B837CDD00D09A6A /* Task.swift */; };
+		E70E478A2B83AE9900D09A6A /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70E47892B83AE9900D09A6A /* Task.swift */; };
+		E70E478E2B83B81E00D09A6A /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70E478D2B83B81E00D09A6A /* TasksView.swift */; };
+		E70E47902B83BEFB00D09A6A /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70E478F2B83BEFB00D09A6A /* ListView.swift */; };
+		E70E47922B83C05500D09A6A /* SubTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70E47912B83C05500D09A6A /* SubTaskView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,9 +22,11 @@
 		4D3E03DD2B835C3C004E2FB4 /* ElenaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElenaApp.swift; sourceTree = "<group>"; };
 		4D3E03E12B835C3C004E2FB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D3E03E42B835C3C004E2FB4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		E70E47812B837CAA00D09A6A /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
 		E70E47832B837CCB00D09A6A /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
-		E70E47852B837CDD00D09A6A /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		E70E47892B83AE9900D09A6A /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		E70E478D2B83B81E00D09A6A /* TasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksView.swift; sourceTree = "<group>"; };
+		E70E478F2B83BEFB00D09A6A /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		E70E47912B83C05500D09A6A /* SubTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubTaskView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +80,7 @@
 		E70E477E2B837C7500D09A6A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E70E47852B837CDD00D09A6A /* Task.swift */,
+				E70E47892B83AE9900D09A6A /* Task.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -92,7 +96,9 @@
 		E70E47802B837C8200D09A6A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E70E47812B837CAA00D09A6A /* TaskListView.swift */,
+				E70E478D2B83B81E00D09A6A /* TasksView.swift */,
+				E70E478F2B83BEFB00D09A6A /* ListView.swift */,
+				E70E47912B83C05500D09A6A /* SubTaskView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -168,9 +174,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E70E47842B837CCB00D09A6A /* TaskViewModel.swift in Sources */,
-				E70E47862B837CDD00D09A6A /* Task.swift in Sources */,
+				E70E478A2B83AE9900D09A6A /* Task.swift in Sources */,
+				E70E47902B83BEFB00D09A6A /* ListView.swift in Sources */,
+				E70E47922B83C05500D09A6A /* SubTaskView.swift in Sources */,
 				4D3E03DE2B835C3C004E2FB4 /* ElenaApp.swift in Sources */,
-				E70E47822B837CAA00D09A6A /* TaskListView.swift in Sources */,
+				E70E478E2B83B81E00D09A6A /* TasksView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,7 +312,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Elena/Preview Content\"";
-				DEVELOPMENT_TEAM = 2R5N5996NF;
+				DEVELOPMENT_TEAM = ZFK4JX3BJ7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -333,7 +341,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Elena/Preview Content\"";
-				DEVELOPMENT_TEAM = 2R5N5996NF;
+				DEVELOPMENT_TEAM = ZFK4JX3BJ7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

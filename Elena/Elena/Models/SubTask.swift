@@ -1,20 +1,11 @@
 //
 //  Task.swift
-//  Elena
+//  MC3_NEXT
 //
 //  Created by Daniele Perrupane on 19/02/24.
 //
 
 import Foundation
-
-struct Task: Identifiable {
-    
-    var id: UUID = UUID()
-    var title: String
-    var subtask: [SubTask]
-    var isCompleted: Bool
-    
-}
 
 struct SubTask: Identifiable {
     
@@ -23,5 +14,8 @@ struct SubTask: Identifiable {
     var isCompleted: Bool
     
 }
+
+
+
 
 

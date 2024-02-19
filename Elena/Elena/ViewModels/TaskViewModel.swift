@@ -11,9 +11,26 @@ import Foundation
 class TaskViewModel {
     
     var tasks = [
-        Task(title: "Task1", text: "Description1"),
-        Task(title: "Task2", text: "Description2"),
-        Task(title: "Task3", text: "Description3")
-    ]
+        
+        Task(title: "Selfcare", subtask: [SubTask(text: "description1", isCompleted: false)], isCompleted: false),
+        Task(title: "Selfcare", subtask: [SubTask(text: "description2", isCompleted: false)], isCompleted: false),
+        Task(title: "Selfcare", subtask: [SubTask(text: "description3", isCompleted: false)], isCompleted: false),
+        Task(title: "Selfcare", subtask: [SubTask(text: "description4", isCompleted: false)], isCompleted: false),
+        Task(title: "Selfcare", subtask: [SubTask(text: "description5", isCompleted: false)], isCompleted: false)
+        
+        ]
     
+}
+
+@Observable
+class SubtaskViewModel{
+    var subtask = [
+    
+        SubTask(text: "description1", isCompleted: false),
+        SubTask(text: "description2", isCompleted: false),
+        SubTask(text: "description3", isCompleted: false),
+        SubTask(text: "description4", isCompleted: false),
+        SubTask(text: "description5", isCompleted: false)
+    
+    ]
 }

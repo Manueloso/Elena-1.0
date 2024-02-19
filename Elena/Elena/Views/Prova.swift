@@ -7,26 +7,40 @@
 
 import SwiftUI
 
-struct TaskListView: View {
-    var viewModel: TaskViewModel
+struct SubTaskListView: View {
+    var viewModel: SubTaskViewModel
+    let subtasks: [SubTask]
     
     var body: some View {
-        List {
-            ForEach(viewModel.tasks) { task in
-                TaskRowView(task: task)
+        
+        NavigationStack {
+            Divider()
+            
+            List(subtasks){ subtask in
+                
+                
+                
             }
-        }
-        .navigationTitle("Daily Tasks")
-        .background(Color.blue)
+            .navigationTitle("Daily Tasks")
+            .toolbar{
+                Button(action: {}) {
+                    Image(systemName: "plus")
+                }
+            }
+            
+            
+            
+        }.padding()
     }
 }
 
 
 struct TaskRowView: View {
     
-    @State var task: Task
+    @State var task: SubTask
     
     var body: some View {
+        
         HStack{
             Text("\(task.text)")
                 .accessibilityLabel("\(task.title)")
@@ -43,6 +57,6 @@ struct TaskRowView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        TaskListView(viewModel: TaskViewModel())
+        SubTaskListView(viewModel: SubTaskViewModel())
     }
 }
