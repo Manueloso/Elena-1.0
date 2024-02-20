@@ -11,6 +11,7 @@ struct SubTaskView: View {
     
     @State var task: SubTask
     var viewModel = TaskViewModel()
+    var viewSubModel = SubtaskViewModel()
     
     
     var body: some View {
@@ -18,24 +19,19 @@ struct SubTaskView: View {
         List{
             ForEach(viewModel.tasks) { task in
                 Section(){
-                    ForEach(task.subtask){ subtask in
-                        HStack{
-                            Text("\(subtask.text)")
-                            Spacer()
-                            Image(systemName: task.isCompleted ? "checkmark.circle" : "circle")
-                                .resizable()
-                                .frame(width: 30.0,height: 30.0)
-                                .onTapGesture {
-                                    task.isCompleted.toggle()
-                                }
-                        }
+                    HStack{
+                        Text("\(viewSubModel.subtask[0].text)")
+                        Spacer()
+                        Image(systemName: task.isCompleted ? "checkmark.circle" : "circle")
+                            .resizable()
+                            .frame(width: 30.0,height: 30.0)
+                            .onTapGesture {
+                                task.isCompleted.toggle()
+                            }
                     }
-                    
                 }.navigationTitle("\(viewModel.tasks[0].title)")
             }
         }
-        
-        
     }
 }
 

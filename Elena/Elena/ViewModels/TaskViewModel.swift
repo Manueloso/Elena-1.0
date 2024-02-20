@@ -13,8 +13,8 @@ class TaskViewModel {
     
     var tasks = [
         
-        Task(title: "Selfcare1", subtask: [SubTask(text: "description1", isCompleted: false),SubTask(text: "de", isCompleted: false), SubTask(text: "description3", isCompleted: false),SubTask(text: "description4", isCompleted: false),SubTask(text: "description5", isCompleted: false)], isCompleted: false),
-        Task(title: "Selfcare2", subtask: [SubTask(text: "description1", isCompleted: false),SubTask(text: "description2", isCompleted: false), SubTask(text: "description3", isCompleted: false),SubTask(text: "description4", isCompleted: false),SubTask(text: "description5", isCompleted: false)], isCompleted: false),
+        Task(title: "Selfcare1", subtask: [SubTask(text: "bevi un bicchiere d'acqua", isCompleted: false),SubTask(text: "scrivi una lettera", isCompleted: false), SubTask(text: "mangia un frutto", isCompleted: false),SubTask(text: "abbraccia un tuo caro", isCompleted: false),SubTask(text: "fai una passeggiata", isCompleted: false)], isCompleted: false),
+        Task(title: "Selfcare2", subtask: [SubTask(text: "de1", isCompleted: false),SubTask(text: "don2", isCompleted: false), SubTask(text: "description3", isCompleted: false),SubTask(text: "description4", isCompleted: false),SubTask(text: "description5", isCompleted: false)], isCompleted: false),
         Task(title: "Selfcare3", subtask: [SubTask(text: "description1", isCompleted: false),SubTask(text: "description2", isCompleted: false), SubTask(text: "description3", isCompleted: false),SubTask(text: "description4", isCompleted: false),SubTask(text: "description5", isCompleted: false)], isCompleted: false),
         Task(title: "Selfcare4", subtask: [SubTask(text: "description1", isCompleted: false),SubTask(text: "description2", isCompleted: false), SubTask(text: "description3", isCompleted: false),SubTask(text: "description4", isCompleted: false),SubTask(text: "description5", isCompleted: false)], isCompleted: false),
         Task(title: "Selfcare5", subtask: [SubTask(text: "description1", isCompleted: false),SubTask(text: "description2", isCompleted: false), SubTask(text: "description3", isCompleted: false),SubTask(text: "description4", isCompleted: false),SubTask(text: "description5", isCompleted: false)], isCompleted: false),
@@ -26,7 +26,7 @@ class TaskViewModel {
 class SubtaskViewModel{
     var subtask = [
     
-        SubTask(text: "description1", isCompleted: false),
+        SubTask(text: "des", isCompleted: false),
         SubTask(text: "description2", isCompleted: false),
         SubTask(text: "description3", isCompleted: false),
         SubTask(text: "description4", isCompleted: false),

@@ -11,20 +11,31 @@ import SwiftUI
 struct ListView: View {
     var task: Task
     var viewModel = TaskViewModel()
-    var subtask: SubTask
+    var viewSubModel = SubtaskViewModel()
+    @State var subtask: SubTask
+    @State private var isOpen = false
+    
     var body: some View {
         NavigationView {
             
             List{
-                ForEach(0..<viewModel.tasks.count, id: \.self){ index in
-                    Section(header: Text("\(viewModel.tasks[index].title)")){
-                        NavigationLink(destination: SubTaskView(task: SubTask(text: "\(task.title)", isCompleted: false))) {
-                            ForEach(task.subtask) { title in
-                                Label("\(viewModel.tasks[index].subtask[index].text)",systemImage: "")
+                ForEach(viewModel.tasks) { task in
+                    Section() {
+                        DisclosureGroup("\(task.title)") {
+                            ForEach(task.subtask) { subtask in
+                                HStack {
+                                    Text("\(subtask.text)")
+                                    
+                                    Spacer()
+                                    Image(systemName: subtask.isCompleted ? "checkmark.circle" : "circle")
+                                        .resizable()
+                                        .frame(width: 30.0,height: 30.0)
+                                }.onTapGesture {
+                                    //AGGIUNGERE IL TAP DELLA CHECKBOX
+                                }
+                                
                             }
-                            
                         }
-                        
                     }
                 }
             }
@@ -33,6 +44,7 @@ struct ListView: View {
                     
                 }) {
                     Image(systemName: "plus")
+                    
                 }
             }
             .navigationTitle("Daily Tasks")
