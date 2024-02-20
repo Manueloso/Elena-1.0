@@ -7,24 +7,40 @@
 
 import SwiftUI
 
+
 struct ListView: View {
-    let task: Task
+    var task: Task
+    var viewModel = TaskViewModel()
     var subtask: SubTask
-    //let viewModel: TaskViewModel
     var body: some View {
-        List{
-            Section(header: Text("\(task.title)")){
-                NavigationLink(destination: SubTaskView(task: SubTask(text: "\(subtask.text)", isCompleted: false))) {
-                    ForEach(task.subtask) { title in
-                        Label("\(subtask.text)",systemImage: "")
-                    }
+        NavigationView {
+            
+            List{
+                ForEach(0..<viewModel.tasks.count, id: \.self){ index in
+                    Section(header: Text("\(viewModel.tasks[index].title)")){
+                        NavigationLink(destination: SubTaskView(task: SubTask(text: "\(task.title)", isCompleted: false))) {
+                            ForEach(task.subtask) { title in
+                                Label("\(viewModel.tasks[index].subtask[index].text)",systemImage: "")
+                            }
+                            
+                        }
                         
+                    }
                 }
             }
+            .toolbar{
+                Button(action: {
+                    
+                }) {
+                    Image(systemName: "plus")
+                }
+            }
+            .navigationTitle("Daily Tasks")
         }
     }
 }
 
+
 #Preview {
-    ListView(task: Task(title: "Selfcare", subtask: [SubTask(text: "", isCompleted: false)], isCompleted: false), subtask: SubTask(text: "titolo subtask", isCompleted: false))
+    ListView(task: Task(title: "selfcare", subtask: [SubTask(text: "", isCompleted: false)], isCompleted: false), subtask: SubTask(text: "titolo subtask", isCompleted: false))
 }

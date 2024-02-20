@@ -10,20 +10,32 @@ import SwiftUI
 struct SubTaskView: View {
     
     @State var task: SubTask
+    var viewModel = TaskViewModel()
+    
     
     var body: some View {
         
-        HStack{
-            Text("\(task.text)")
-               
-            Spacer()
-            Image(systemName: task.isCompleted ? "checkmark.circle" : "circle")
-                .resizable()
-                .frame(width: 30.0,height: 30.0)
-                .onTapGesture {
-                    task.isCompleted.toggle()
-                }
+        List{
+            ForEach(viewModel.tasks) { task in
+                Section(){
+                    ForEach(task.subtask){ subtask in
+                        HStack{
+                            Text("\(subtask.text)")
+                            Spacer()
+                            Image(systemName: task.isCompleted ? "checkmark.circle" : "circle")
+                                .resizable()
+                                .frame(width: 30.0,height: 30.0)
+                                .onTapGesture {
+                                    task.isCompleted.toggle()
+                                }
+                        }
+                    }
+                    
+                }.navigationTitle("\(viewModel.tasks[0].title)")
+            }
         }
+        
+        
     }
 }
 

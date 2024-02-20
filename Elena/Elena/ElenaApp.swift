@@ -11,7 +11,7 @@ import SwiftUI
 struct ElenaApp: App {
     var body: some Scene {
         WindowGroup {
-            TasksView(tasks: Task(title: "", subtask: [SubTask(text: "description1", isCompleted: false)], isCompleted: false))
+        ListView(task: Task(title: "", subtask: [SubTask(text: "", isCompleted: false)], isCompleted: false), subtask: SubTask(text: "", isCompleted: false))
         }
     }
 }
