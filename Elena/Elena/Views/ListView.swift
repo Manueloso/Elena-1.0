@@ -9,50 +9,50 @@ import SwiftUI
 
 
 struct ListView: View {
-    var task: Task
-    var viewModel = TaskViewModel()
-    var viewSubModel = SubtaskViewModel()
-    @State var subtask: SubTask
-    @State private var isOpen = false
+        var task: Task
+        var viewModel = TaskViewModel()
+        var viewSubModel = SubtaskViewModel()
+        @State var subtask: SubTask
+    
+    
     
     var body: some View {
         NavigationView {
             
-            List{
-                ForEach(viewModel.tasks) { task in
-                    Section() {
-                        DisclosureGroup("\(task.title)") {
-                            ForEach(task.subtask) { subtask in
-                                HStack {
-                                    Text("\(subtask.text)")
-                                    
-                                    Spacer()
-                                    Image(systemName: subtask.isCompleted ? "checkmark.circle" : "circle")
-                                        .resizable()
-                                        .frame(width: 30.0,height: 30.0)
-                                }.onTapGesture {
-                                    //AGGIUNGERE IL TAP DELLA CHECKBOX
+            
+            
+            
+            
+            
+            
+                        List{
+                            ForEach(viewModel.tasks) { task in
+                                Section() {
+                                    DisclosureGroup("\(task.title)") {
+                                        ForEach(task.subtask) { subtask in
+                                            HStack {
+                                                //AGGIUNGERE IL TAP DELLA CHECKBOX
+                                                Image(systemName: "checkmark.circle")
+                                                    .resizable()
+                                                    .frame(width: 30.0,height: 30.0)
+                                                Text("\(subtask.text)")
+                                                Spacer()
+                                            }
+                                        }
+                                    }
                                 }
-                                
                             }
                         }
+                        //.listStyle(PlainListStyle())
+                        .navigationTitle("Daily Tasks 📝")
+                        .navigationBarItems(
+                            leading: EditButton(),
+                            trailing: NavigationLink("Add", destination: AddView()))
                     }
-                }
-            }
-            .toolbar{
-                Button(action: {
-                    
-                }) {
-                    Image(systemName: "plus")
-                    
-                }
-            }
-            .navigationTitle("Daily Tasks")
         }
     }
-}
-
-
-#Preview {
-    ListView(task: Task(title: "selfcare", subtask: [SubTask(text: "", isCompleted: false)], isCompleted: false), subtask: SubTask(text: "titolo subtask", isCompleted: false))
-}
+    
+    
+    #Preview {
+            ListView(task: Task(title: "selfcare", subtask: [SubTask(text: "", isCompleted: false)], isCompleted: false), subtask: SubTask(text: "titolo subtask", isCompleted: false))
+    }

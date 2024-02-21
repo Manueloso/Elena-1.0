@@ -9,9 +9,16 @@ import SwiftUI
 
 @main
 struct ElenaApp: App {
+    
+    @StateObject var listViewModel: ListViewModel = ListViewModel()
+    
     var body: some Scene {
         WindowGroup {
-        ListView(task: Task(title: "", subtask: [SubTask(text: "", isCompleted: false)], isCompleted: false), subtask: SubTask(text: "", isCompleted: false))
+            NavigationView{
+                ListView2()
+            }
+            .environmentObject(listViewModel)
+            
         }
     }
 }
